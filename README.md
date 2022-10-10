@@ -19,6 +19,15 @@ item
 
 the most interesting parts will be "rarity" and "isDisplayed", "rarity" will be a number 1-100 and will denote a percentage chance for the item to appear within the bazaar. This will be part of the seeding process. For instance, a regular one-handed sword will be around a 85-90% chance to be seeded into the database when a user logs in, but a magical item, say a powerful arcane tome, may have as little as a 3-4% chance to seed in. This way each time someone visits the bazaar the wares will change.
 
+# Technologies Used
+1. HTML
+2. CSS
+3. JS
+4. LiquidJS
+5. Mongoose
+6. Express
+7. Morgan (for debugging)
+8. Postman (for debugging)
 
 # User Stories
 
