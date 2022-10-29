@@ -1,0 +1,21 @@
+{% layout 'layout.liquid' %}
+{% block content %}
+  <div class="container-md">
+    <article>
+      <h2>
+        {{ item.title }}
+      </h2>
+      <h3>Price:
+        {{ item.price }}
+      </h3>
+      <h6>{{ item.description }}
+      </h6>
+      <div class="btn-group">
+        <a href="/items/{{ item.id }}/barter" class="btn btn-primary">Barter</a>
+        <form action="/items/{{ item.id }}?_method=DELETE" method="POST">
+          <input type="submit" value="Purchase" class="btn btn-danger">
+        </form>
+      </div>
+    </article>
+  </div>
+{% endblock %}

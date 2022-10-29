@@ -1,0 +1,17 @@
+{% layout 'layout.liquid' %}
+{% block content %}
+  <div class="container-md">
+    <article>
+      <h2>
+        Why thank ye stranger, I'll add that one to yer tab.
+      </h2>
+      <h3>Price:
+        {{ item.price }}
+      </h3>
+      <a href="/user/{{ item.id }}" class="btn btn-info">
+              View
+              {{ item.title }}
+            </a>
+    </article>
+  </div>
+{% endblock %}

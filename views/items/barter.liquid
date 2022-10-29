@@ -1,0 +1,16 @@
+{% layout 'layout.liquid' %}
+{% block content %}
+  <div class="container-sm">
+    <form action="/items" method="POST">
+      <fieldset>
+        <legend>Barter</legend>
+        <label class="form-label">Title:
+        </label>
+        <input type="text" name="title" placeholder="{{ item.title }}" value="{{ item.title }}" class="form-control">
+        <label class="form-label">Price:</label>
+        <input type="number" name="price" value="{{ item.price }}" class="form-control">
+      </fieldset>
+      <input type="submit" value="Edit item" class="btn btn-success">
+    </form>
+  </div>
+{% endblock %}}
