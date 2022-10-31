@@ -1,5 +1,6 @@
 // Import Dependencies
 const express = require('express')
+// This is imported as `items` but you are using `Item` in the rest of the file. Change this at the top and this should now work for your Item model
 const items = require('../models/items')
 
 // Create router
@@ -16,6 +17,7 @@ router.post("/:itemId", (req, res) => {
         res.sendStatus(401)
     }
     // find a specific item
+    // Just linking the comment on line 3 that I left to the Item that I am meaning
     Item.findById(itemId)
         // do something if it works
         //  --> send a success response status and maybe the review? maybe the item?
@@ -47,6 +49,7 @@ router.delete('/delete/:itemId/:revId', (req, res) => {
             // subdocs have a built in method that you can use to access specific subdocuments when you need to.
             // this built in method is called .id()
             const theReview = item.reviews.id(revId)
+            // Nit: remove console.logs
             console.log('this is the review that was found', theReview)
             // make sure the user is logged in
             if (req.session.loggedIn) {

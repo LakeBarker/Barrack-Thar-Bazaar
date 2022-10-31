@@ -51,6 +51,7 @@ router.get('/mine', (req, res) => {
 
 // new route -> GET route that renders our page with the form
 router.get('/new', (req, res) => {
+	// Nit: remove `userId` not used in scope
 	const { username, userId, loggedIn } = req.session
 	res.render('items/new', { username, loggedIn })
 })
@@ -62,6 +63,7 @@ router.post('/', (req, res) => {
 	req.body.owner = req.session.userId
 	Item.create(req.body)
 		.then(item => {
+			// Nit: remove console.log
 			console.log('this was returned from create', item)
 			res.redirect('/items')
 		})
@@ -114,6 +116,7 @@ router.get('/:id', (req, res) => {
 router.delete('/:id', (req, res) => {
 	const itemId = req.params.id
 	Item.findByIdAndRemove(itemId)
+	// Nit: can just pass nothing here since `item` is not used in scope of function () => {}
 		.then(item => {
 			res.redirect('/items')
 		})
