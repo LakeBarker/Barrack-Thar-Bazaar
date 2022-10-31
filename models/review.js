@@ -5,6 +5,7 @@ const mongoose = require('./connection')
 const User = require('./user')
 
 // destructure the schema and model constructors from mongoose
+// Nit: can remove unused `model`
 const { Schema, model } = mongoose
 
 const reviewSchema = new Schema(
